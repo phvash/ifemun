@@ -1,0 +1,5 @@
+[run]
+include = ifemun/*
+omit = *migrations*, *tests*
+plugins =
+    django_coverage_plugin
