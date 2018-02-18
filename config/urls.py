@@ -15,11 +15,11 @@ urlpatterns = [
     # User management
     url(r'^users/', include('ifemun.users.urls', namespace='users')),
     url(r'^accounts/', include('allauth.urls')),
-    url(r'^blog/', include('ifemun.blog.urls', namespace='blog')),
-    url(r'^conference/', include('ifemun.conference.urls', namespace='conference')),
+
 
     # Your stuff: custom urls includes go here
-
+    url(r'^blog/', include('ifemun.blog.urls', namespace='blog')),
+    url(r'^conference/', include('ifemun.conference.urls', namespace='conference')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
