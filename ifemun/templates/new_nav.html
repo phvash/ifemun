@@ -1,0 +1,42 @@
+<header id="header" class="full-header static-sticky" data-sticky-offset="0">
+
+        <div id="header-wrap">
+
+            <div class="container clearfix">
+
+                <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                <!-- Logo
+                ============================================= -->
+                <div id="logo">
+                    <a href="{% url 'home' %}" class="standard-logo" data-dark-logo="http://canvashtml-cdn.semicolonweb.com/one-page/images/canvasone-dark.png"><img src="http://canvashtml-cdn.semicolonweb.com/one-page/images/canvasone.png" alt="Canvas Logo"></a>
+                    <a href="{% url 'home' %}" class="retina-logo" data-dark-logo="http://canvashtml-cdn.semicolonweb.com/one-page/images/canvasone-dark@2x.png"><img src="http://canvashtml-cdn.semicolonweb.com/one-page/images/canvasone@2x.png" alt="Canvas Logo"></a>
+                </div>
+                <!-- #logo end -->
+
+                <!-- <div id="logo">
+                        <a href="{% url 'home' %}" class="standard-logo" >Ifemun</a>
+                        <a href="{% url 'home' %}" class="retina-logo" >Ifemun</a>
+                </div> -->
+
+                <!-- Primary Navigation
+                ============================================= -->
+                <nav id="primary-menu">
+                    <ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
+                        <li><a href="{% url 'home' %}"><div>Home</div></a></li>
+                        <li><a href="#"><div>About</div></a></li>
+                        <li><a href="{% url 'conference:registration' %}"><div>Registration</div></a></li>
+                        <li><a href="#"><div>Conference</div></a></li>
+                        <li><a href="#"><div>Committee</div></a></li>
+                        <li><a href="{% url 'blog:post_list' %}"><div>Blog</div></a></li>
+                    </ul>
+
+                    <!-- <div id="side-panel-trigger" class="side-panel-trigger"><a href="#"><i class="icon-reorder"></i></a></div> -->
+
+                </nav><!-- #primary-menu end -->
+
+            </div>
+
+        </div>
+
+    </header><!-- #header end -->

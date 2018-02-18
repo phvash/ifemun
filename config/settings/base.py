@@ -55,6 +55,8 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     # custom users app
     'ifemun.users.apps.UsersConfig',
+    'ifemun.blog.apps.BlogConfig',
+    'ifemun.conference.apps.ConferenceConfig',
     # Your stuff: custom apps go here
 ]
 
