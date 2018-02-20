@@ -6,4 +6,4 @@ class RegistrationForm(forms.ModelForm):
 
     class Meta:
         model = Delegate
-        fields = ('first_name', 'last_name', 'department')
+        fields = ('first_name', 'last_name', 'department', 'part')
