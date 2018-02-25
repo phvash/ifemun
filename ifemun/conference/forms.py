@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Delegate
+from .models import Applicant
 
 class RegistrationForm(forms.ModelForm):
 

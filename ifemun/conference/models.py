@@ -1,6 +1,6 @@
 from django.db import models
 
-class Delegate(models.Model):
+class Applicant(models.Model):
     # author = models.ForeignKey('settings.AUTH_USER_MODEL')
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
