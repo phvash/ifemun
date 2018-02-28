@@ -49,3 +49,6 @@ django-extensions
 
 
 # Your custom requirements go here
+django_countries
+django-phonenumber-field
+django-widget-tweaks
