@@ -104,7 +104,8 @@ class Applicant(models.Model):
     visa_exp_date = models.DateField(
         verbose_name='Visa Expiry Date',
         help_text='Format: DD/MM/YYYY',
-        blank=True
+        blank=True,
+        null =True
     )
     category = models.CharField(
         max_length=3, 

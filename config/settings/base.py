@@ -51,6 +51,7 @@ THIRD_PARTY_APPS = [
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
     'widget_tweaks', # form styling
+    'django_csv_exports', # export models as csv from django-admin
 ]
 
 # Apps specific for this project go here.
