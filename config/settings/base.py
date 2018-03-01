@@ -60,6 +60,7 @@ LOCAL_APPS = [
     'ifemun.users.apps.UsersConfig',
     'ifemun.blog.apps.BlogConfig',
     'ifemun.conference.apps.ConferenceConfig',
+    'ifemun.committees.apps.CommitteesConfig',
     # Your stuff: custom apps go here
 ]
 

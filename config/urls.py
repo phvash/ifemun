@@ -20,6 +20,7 @@ urlpatterns = [
     # Your stuff: custom urls includes go here
     url(r'^blog/', include('ifemun.blog.urls', namespace='blog')),
     url(r'^conference/', include('ifemun.conference.urls', namespace='conference')),
+    url(r'^committees/', include('ifemun.committees.urls', namespace='committees')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

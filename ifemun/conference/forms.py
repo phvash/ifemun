@@ -3,7 +3,16 @@ from django import forms
 from .models import Applicant
 
 class RegistrationForm(forms.ModelForm):
-
+    dob = forms.DateField(
+        required=True, 
+        input_formats=['%Y-%m-%d', '%d-%m-%Y', '%d/%m/%Y', '%d/%m/%y'],
+        label='Date of Birth', 
+        help_text='Format: DD/MM/YYYY')
+    visa_exp_date = forms.DateField(
+        required=False, 
+        input_formats=['%Y-%m-%d', '%d-%m-%Y', '%d/%m/%Y', '%d/%m/%y'],
+        label='Visa Expiry Date', 
+        help_text='Format: DD/MM/YYYY')
     class Meta:
         model = Applicant
         fields = (
