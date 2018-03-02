@@ -23,3 +23,5 @@ class RegistrationPage(TemplateView):
         else:
             # form = RegistrationForm()
             return render(request, template_path, {'form': form})
+
+
