@@ -155,7 +155,8 @@ CACHES = {
 
 
 # Sentry Configuration
-SENTRY_DSN = env('DJANGO_SENTRY_DSN')
+# SENTRY_DSN = env('DJANGO_SENTRY_DSN')
+SENTRY_DSN  = 'https://ff44f03982934a12a7bb06ce0d5aadcf:0d1056c11ec14132b6fcf258e58452ca@sentry.io/296997'
 SENTRY_CLIENT = env('DJANGO_SENTRY_CLIENT', default='raven.contrib.django.raven_compat.DjangoClient')
 LOGGING = {
     'version': 1,
