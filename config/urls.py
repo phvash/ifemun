@@ -55,3 +55,4 @@ if settings.DEBUG:
         ] + urlpatterns
 
 
+# 'sudo heroku certs:add /etc/letsencrypt/live/www.ifemun.org/fullchain.pem /etc/letsencrypt/live/www.ifemun.org/privkey.pem'
