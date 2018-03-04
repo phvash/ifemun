@@ -2,4 +2,67 @@
 {% load static %}
 {% block title %}Ifemun | Conference{% endblock %}
 {% block content %}
+
+
+<section id="slider" class=="slider-element slider-parallax full-screen force-full-screen" >
+
+        <!-- <div class="section dark nomargin noborder ohidden" style="padding: 120px 0;"> -->
+        
+        <div class="slider-parallax-inner">
+        
+            <div class="full-screen force-full-screen dark section nopadding nomargin noborder ohidden" style="background-image: url('{% static "images/bg4.jpg" %}'); background-size: cover; background-position: center center;">
+
+                <div class="container center">
+                    <div class="vertical-middle">
+
+
+                        <div class="emphasis-title">
+                                    <div class="transbox">
+                                        <h2>
+                                            <p>Ife Model United Nations, 2018</p>
+                                        </h2>
+                                        <h3>
+                                            <p>June 20th - 23rd, 2018</p>
+                                        </h3>
+                                            <a href="{% url 'conference:registration' %}" class="button button-border button-light button-circle t400" >Register</a>
+
+                                    </div>
+
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+        </div>
+        </div>
+
+        </div>
+
+</section>
+
+<style>
+        div.background {
+            background: url(klematis.jpg) repeat;
+            border: 2px solid black;
+        }
+        
+        div.transbox {
+            margin: 30px;
+            background-color: #ffffff;
+            border: 1px solid black;
+            opacity: 0.6;
+            filter: alpha(opacity=60); /* For IE8 and earlier */
+        }
+        
+        div.transbox p {
+            margin: 5%;
+            font-weight: bold;
+            color: #000000;
+            z-index: 2;
+        }
+</style>
+
 {% endblock %}
+
+

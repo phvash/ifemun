@@ -4,42 +4,46 @@
 
 {% block content %}
 
-<!-- Slider
-    ============================================= -->
-    <section id="slider" class=="slider-element slider-parallax full-screen force-full-screen" >
+<section id="slider" class=="slider-element slider-parallax full-screen force-full-screen" >
 
-            <!-- <div class="section dark nomargin noborder ohidden" style="padding: 120px 0;"> -->
-            
-            <div class="slider-parallax-inner">
-            
-                <div class="full-screen force-full-screen dark section nopadding nomargin noborder ohidden" style="background-image: url('{% static "images/bg5.jpg" %}'); background-size: cover; background-position: center center;">
+        <!-- <div class="section dark nomargin noborder ohidden" style="padding: 120px 0;"> -->
+        
+        <div class="slider-parallax-inner">
+        
+            <div class="full-screen force-full-screen dark section nopadding nomargin noborder ohidden" style="background-image: url('{% static "images/bg4.jpg" %}'); background-size: cover; background-position: center center;">
 
-				
+                <div class="container center">
+                    <div class="vertical-middle">
 
-                    <div class="container center">
-                        <div class="vertical-middle">
+                        <div class="emphasis-title transbox">
+                            <h2>
+                                    <p>Ife Model United Nations, 2018</p>
+                            </h2>
+                            <h3>
+                                    <p>
+                                        Theme: Achieving Human Development; Striving for Peace and Decent Live in a Sustainable World
+                                    </p>
+                            </h3>
 
-                            <div class="emphasis-title">
-                                <span class="before-heading opm-medium t300 uppercase font-primary">We are</span>
-                                <h1>
-                                    <span class="text-rotater nocolor" data-separator="|" data-rotate="fadeInRight" data-speed="800">
-                                        <span class="t-rotate t700 font-body opm-medium-word">IFE|Model|United|Nations|2018.</span>
-                                    </span>
-                                </h1>
-                            </div>
-
-                            <a href="{% url 'conference:registration' %}" class="button button-border button-light button-circle t400">Register</a>
+                            <h3>
+                                <p><i>June 20th - 23rd, 2018</i></p>
+                            </h3>
 
                         </div>
+
+                        <a href="{% url 'conference:registration' %}" class="button button-border button-light button-circle t400" >Register</a>
+
+                        
                     </div>
+                </div>
 
-            </div>
-            <!-- </div> -->
+        </div>
+        </div>
 
-            </div>
+        </div>
 
-    </section>
-    <!-- #slider end -->
+</section>
+
 
 
     <!-- Content
@@ -114,9 +118,7 @@
                                 </p>
 
         
-                        </div>
-
-                        
+                            </div>
 
                         </div>
 
@@ -125,7 +127,6 @@
 
                         </div>
                        
-                        <div class="clear"></div>
                     </div>
                 </div>
             </div>
@@ -155,4 +156,23 @@
     </section>
 
 
+    <style>            
+            div.transbox {
+                margin: 30px;
+                background-color: #ffffff;
+                border: 1px solid black;
+                opacity: 0.6;
+                filter: alpha(opacity=60); /* For IE8 and earlier */
+            }
+            
+            div.transbox p {
+                margin: 3%;
+                font-weight: bold;
+                color: #000000;
+            }
+    </style>
+
 {% endblock %}
+
+
+<!-- emphasis-title -->
