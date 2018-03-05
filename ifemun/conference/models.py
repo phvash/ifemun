@@ -146,6 +146,12 @@ class Applicant(models.Model):
         max_length=3, 
         choices=POC_CHOICES,
         help_text='How did you hear about IFE Model UN conference 2018?')
+    referral_code = models.CharField(
+        max_length=50,
+        help_text='Please enter your referral code? (If referred by a Campus Ambassador )',
+        blank=True
+    )
+    
 
 
 

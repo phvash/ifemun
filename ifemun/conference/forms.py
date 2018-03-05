@@ -51,4 +51,5 @@ class RegistrationForm(forms.ModelForm):
             'previous_role',
             'previous_committee',
             'point_of_contact',
+            'referral_code'
     )
