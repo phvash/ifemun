@@ -20,8 +20,7 @@ TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 # ------------------------------------------------------------------------------
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key only used for development and testing.
-SECRET_KEY = env('DJANGO_SECRET_KEY', 
-default='ovEQ69Jf9zhAJ6V6J17Dw4Vw0yObl7I3OyDfx6Pr8rKXAAVzHu')
+SECRET_KEY = env('DJANGO_SECRET_KEY', default='ovEQ69Jf9zhAJ6V6J17Dw4Vw0yObl7I3OyDfx6Pr8rKXAAVzHu')
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
@@ -52,8 +51,8 @@ X_FRAME_OPTIONS = 'DENY'
 # ------------------------------------------------------------------------------
 # Hosts/domain names that are valid for this site
 # See https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', 
-default=['www.ifemun.org', 'ifemun.org',])
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['www.ifemun.org', 'ifemun.org',])
+
 # END SITE CONFIGURATION
 
 # Static Assets
@@ -67,7 +66,7 @@ EMAIL_PORT = 1025
 
 EMAIL_HOST = 'localhost'
 EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND',
-                    
+                 
 default='django.core.mail.backends.console.EmailBackend')
 
 
@@ -77,8 +76,7 @@ default='django.core.mail.backends.console.EmailBackend')
 # https://docs.djangoproject.com/en/dev/ref/templates/api/#django.template.loaders.cached.Loader
 TEMPLATES[0]['OPTIONS']['loaders'] = [
     ('django.template.loaders.cached.Loader', [
-        'django.template.loaders.filesystem.Loader', 
-'django.template.loaders.app_directories.Loader', ]),
+        'django.template.loaders.filesystem.Loader', 'django.template.loaders.app_directories.Loader', ]),
 ]
 
 
@@ -127,5 +125,6 @@ DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 
 # Custom Admin URL, use {% url 'admin:index' %}
+
 # ADMIN_URL = env('DJANGO_ADMIN_URL')
 ADMIN_URL = "somelocation"
