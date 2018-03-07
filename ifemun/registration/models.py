@@ -42,6 +42,16 @@ BINARY_CHOICES = (
     ('N', 'No')
 )
 
+COMMITTEE_CHOICES = (
+    ('UNSC', 'United Nations Security Council'),
+    ('DISEC', 'GA1 DISEC'),
+    ('UNCHR' ,'United Nations Commission for Human Right'),
+    ('ECOFIN', 'GA3 ECOFIN'),
+    ('IOC' ,'International Olympic Committee'),
+    ('WHO', 'World Health Organization'),
+    ('UNESCO', 'United Nations Educational, Scientific and Cultural Organization')
+)
+
 class Applicant(models.Model):
     # author = models.ForeignKey('settings.AUTH_USER_MODEL')
     first_name = models.CharField(max_length=50)
@@ -124,7 +134,11 @@ class Applicant(models.Model):
         verbose_name='Country of Choice',
         help_text='Third most preferred'
     )
-    committee_choice = models.CharField(max_length=50, verbose_name='Committee of Choice',)
+    committee_choice = models.CharField(
+        max_length=8, 
+        verbose_name='Committee of Choice',
+        choices=COMMITTEE_CHOICES
+    )
     previous_experience = models.CharField(
         help_text='Do you have any previous Model UN conference experience?',
         max_length=1,
@@ -140,7 +154,8 @@ class Applicant(models.Model):
         verbose_name='Committee',
         max_length=50,
         help_text='Which committee did you participate either as a delegate/official?',
-        blank=True
+        blank=True,
+        choices=COMMITTEE_CHOICES
     )
     point_of_contact = models.CharField(
         max_length=3, 
