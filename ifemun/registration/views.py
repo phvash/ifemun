@@ -1,10 +1,12 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 
 from .forms import RegistrationForm
 
-
+@method_decorator(csrf_exempt, name='post')
 class RegistrationPage(TemplateView):
     def get(self, request, **kwargs):
         form = RegistrationForm()
