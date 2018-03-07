@@ -11,7 +11,9 @@ from django.contrib.messages import constants as messages
 import environ
 
 ROOT_DIR = environ.Path(__file__) - 3  # (ifemun/config/settings/base.py - 3 = ifemun/)
+# ROOT_DIR = "/home/ifemunor/public_html/python/ifemun/"
 APPS_DIR = ROOT_DIR.path('ifemun')
+# APPS_DIR = "/home/ifemunor/public_html/python/ifemun/ifemun"
 
 # Load operating system environment variables and then prepare to use them
 env = environ.Env()
@@ -119,8 +121,8 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ifemun',
-        'USER': 'root',
+        'NAME': 'ifemunor_ifemun',
+        'USER': 'ifemunor_admin',
         'PASSWORD': 'password',
         'HOST': 'localhost',  # Or an IP Address that your DB is hosted on
         'PORT': '3306',
@@ -304,3 +306,6 @@ MESSAGE_TAGS = {
     messages.WARNING: 'alert-warning',
     messages.ERROR: 'alert-danger',
 }
+
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', 
+default=['www.ifemun.org', 'ifemun.org'])
