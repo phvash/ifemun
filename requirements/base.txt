@@ -54,3 +54,4 @@ django_countries
 django-phonenumber-field
 django-widget-tweaks
 django-csv-exports
+future
