@@ -58,7 +58,7 @@
                                     <h3>Register for Conference</h3>
                     
 
-                                    <form id="register-form" name="register-form" class="nobottommargin" method="post" action="{% url 'registration:reg-form' %}" novalidate>
+                                    <form id="register-form" name="register-form" class="nobottommargin" method="post">
                                             {% csrf_token %}
                                             {% include 'base_form.html' with form=form %}
                                             <P>
