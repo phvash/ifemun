@@ -63,6 +63,7 @@ LOCAL_APPS = [
     'ifemun.blog.apps.BlogConfig',
     'ifemun.conference.apps.ConferenceConfig',
     'ifemun.committees.apps.CommitteesConfig',
+    'ifemun.registration.apps.RegistrationConfig',
     # Your stuff: custom apps go here
 ]
 
@@ -121,14 +122,14 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ifemunor_ifemun',
-        'USER': 'ifemunor_admin',
+        'NAME': 'ifemun',
+        'USER': 'root',
         'PASSWORD': 'password',
         'HOST': 'localhost',  # Or an IP Address that your DB is hosted on
         'PORT': '3306',
         'OPTIONS': {
             'charset': 'utf8mb4',
-            "init_command": "SET foreign_key_checks = 0;",
+            "init_command": "SET foreign_key_checks = 0; SET sql_mode='STRICT_TRANS_TABLES';",
         },
         'TEST': {
             'CHARSET': 'utf8mb4',
@@ -279,6 +280,7 @@ AUTHENTICATION_BACKENDS = [
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_MAX_LENGTH = 100
 
 ACCOUNT_ALLOW_REGISTRATION = env.bool('DJANGO_ACCOUNT_ALLOW_REGISTRATION', True)
 ACCOUNT_ADAPTER = 'ifemun.users.adapters.AccountAdapter'
@@ -308,4 +310,4 @@ MESSAGE_TAGS = {
 }
 
 ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', 
-default=['www.ifemun.org', 'ifemun.org'])
+default=['www.ifemun.org', 'ifemun.org', '127.0.0.1'])

@@ -108,7 +108,7 @@ DATABASES = {
         'PORT': '3306',
         'OPTIONS': {
             'charset': 'utf8mb4',
-            "init_command": "SET foreign_key_checks = 0;",
+            "init_command": "SET foreign_key_checks = 0; SET sql_mode='STRICT_TRANS_TABLES';",
         },
         'TEST': {
             'CHARSET': 'utf8mb4',
@@ -123,4 +123,5 @@ DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 
 # Custom Admin URL, use {% url 'admin:index' %}
-ADMIN_URL = env('DJANGO_ADMIN_URL')
+# ADMIN_URL = env('DJANGO_ADMIN_URL')
+ADMIN_URL = "somelocation"

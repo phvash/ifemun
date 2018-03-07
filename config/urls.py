@@ -36,6 +36,7 @@ urlpatterns = [
     url(r'^blog/', include('ifemun.blog.urls', namespace='blog')),
     url(r'^conference/', include('ifemun.conference.urls', namespace='conference')),
     url(r'^committees/', include('ifemun.committees.urls', namespace='committees')),
+    url(r'^registration/', include('ifemun.registration.urls', namespace='registration')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
