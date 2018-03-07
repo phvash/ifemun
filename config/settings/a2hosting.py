@@ -52,6 +52,7 @@ X_FRAME_OPTIONS = 'DENY'
 # Hosts/domain names that are valid for this site
 # See https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['www.ifemun.org', 'ifemun.org',])
+
 # END SITE CONFIGURATION
 
 # Static Assets
@@ -65,7 +66,8 @@ EMAIL_PORT = 1025
 
 EMAIL_HOST = 'localhost'
 EMAIL_BACKEND = env('DJANGO_EMAIL_BACKEND',
-                    default='django.core.mail.backends.console.EmailBackend')
+                 
+default='django.core.mail.backends.console.EmailBackend')
 
 
 # TEMPLATE CONFIGURATION
@@ -123,5 +125,6 @@ DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 
 # Custom Admin URL, use {% url 'admin:index' %}
+
 # ADMIN_URL = env('DJANGO_ADMIN_URL')
 ADMIN_URL = "somelocation"
