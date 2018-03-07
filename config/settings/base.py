@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 from django.contrib.messages import constants as messages
 import environ
+import os
 
 ROOT_DIR = environ.Path(__file__) - 3  # (ifemun/config/settings/base.py - 3 = ifemun/)
 # ROOT_DIR = "/home/ifemunor/public_html/python/ifemun/"

@@ -128,3 +128,30 @@ DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 # ADMIN_URL = env('DJANGO_ADMIN_URL')
 ADMIN_URL = "somelocation"
+
+LOG_DIR = ROOT_DIR.path('logs')
+LOG_PATH = str(LOG_DIR.path('debug.log'))
+
+if not os.path.exists(LOG_PATH):
+    os.makedirs(str(LOG_DIR))
+    with open(LOG_PATH,'w') as f:
+        f.write("")
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': str(LOG_DIR.path('debug.log')),
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
