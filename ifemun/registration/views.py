@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 
+
 from .forms import RegistrationForm
 
 
