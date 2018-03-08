@@ -8,7 +8,7 @@ from django.http import HttpResponse
 
 import csv
 
-from .test_views import MyView, RegistrationSubmit
+from .test_views import MyView, RegistrationSubmit, regformfunction
 
 
 def some_view(request):
@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='pages/new_home.html'), name='home'),
     url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
     url(r'^hi/$', MyView.as_view(), name='bullshit'),
-    url(r'^submit/$', RegistrationSubmit.as_view(), name='submit'),
+    url(r'^submit/$', regformfunction, name='submit'),
     url(r'^.well-known/acme-challenge/9P-9e5iWbA7L2-xAxOjjNoJDhsyET6f0xG4_r26f_PQ$', some_view, name=''),
 
     # Django Admin, use {% url 'admin:index' %}
