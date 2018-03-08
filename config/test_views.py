@@ -2,6 +2,12 @@ from django.http import HttpResponse
 from django.views import View
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib import messages
+from django.shortcuts import render, redirect
+from django.views.generic import TemplateView
+
+
+from ifemun.registration.forms import RegistrationForm
 
 
 class MyView(View):
@@ -15,5 +21,19 @@ class MyView(View):
     @csrf_exempt
     def post(self, request):
         return HttpResponse('post result')
+
+class RegistrationSubmit(TemplateView):
+    def post(self, request, **kwargs):
+        form = RegistrationForm(request.POST)
+        template_path = "conference/new_reg.html"
+        if form.is_valid():
+            delegate = form.save(commit=False)
+            delegate.save()
+            # update this to point to success message
+            messages.success(request, 'Your registration was successful!')
+            return redirect('home')
+        else:
+            # form = RegistrationForm()
+            return render(request, template_path, {'form': form})
 
 
