@@ -36,6 +36,7 @@ class RegistrationSubmit(TemplateView):
             # form = RegistrationForm()
             return render(request, template_path, {'form': form})
 
+@csrf_exempt
 def regformfunction(request):
     if request.method == "POST":
         form = RegistrationForm(request.POST)
