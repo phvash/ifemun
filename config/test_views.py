@@ -45,8 +45,8 @@ def regformfunction(request):
             delegate = form.save(commit=False)
             delegate.save()
             # update this to point to success message
-            messages.success(request, 'Your registration was successful!')
-            return redirect('home')
+            # messages.success(request, 'Your registration was successful!')
+            return redirect('https://ifemun.org/registration/success/')
         else:
             # form = RegistrationForm()
             return render(request, template_path, {'form': form})
