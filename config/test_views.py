@@ -51,3 +51,11 @@ def regformfunction(request):
             # form = RegistrationForm()
             return render(request, template_path, {'form': form})
 
+    if request.method == "GET":
+        form = RegistrationForm()
+        template_path = "conference/new_reg.html"
+        return render(request, template_path, {'form': form})
+
+
+
+
