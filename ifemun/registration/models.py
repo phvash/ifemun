@@ -18,6 +18,13 @@ CATEGORY_CHOICES = (
     ('DEL', 'Delegate'),
     ('OFF', 'Official'),
     ('OBS', 'Observer'),
+    ('AMB', 'Campus Ambassador'),
+)
+
+PREV_CATEGORY_CHOICES = (
+    ('DEL', 'Delegate'),
+    ('OFF', 'Official'),
+    ('OBS', 'Observer'),
 )
 
 SHIRT_CHOICES = (
@@ -63,12 +70,10 @@ class Applicant(models.Model):
     )
     email = models.EmailField()
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
-    postal_address = models.CharField(max_length=50)
     home_address = models.CharField(max_length=100)
     phone_number = PhoneNumberField(help_text='Enter in international number format')
     country_of_residence = CountryField()
     occupation = models.CharField(max_length=50)
-    postal_address = models.CharField(max_length=50)
     programme_of_study = models.CharField(max_length=100)
     name_of_institution = models.CharField(max_length=100)
     name_of_Guardian = models.CharField(
@@ -111,13 +116,14 @@ class Applicant(models.Model):
         help_text='If yes, please state your passport number',
         blank=True 
     )
-    visa_exp_date = models.DateField(
-        verbose_name='Visa Expiry Date',
+    passport_exp_date = models.DateField(
+        verbose_name='Passport Expiry Date',
         help_text='Format: DD/MM/YYYY',
         blank=True,
         null =True
     )
     category = models.CharField(
+        verbose_name='Registration Category',
         max_length=3, 
         choices=CATEGORY_CHOICES,
         help_text='Select your category'    
@@ -137,25 +143,26 @@ class Applicant(models.Model):
     committee_choice = models.CharField(
         max_length=8, 
         verbose_name='Committee of Choice',
-        choices=COMMITTEE_CHOICES
+        choices=COMMITTEE_CHOICES,
+        help_text='Kindly check the "Committees" page for details'
     )
     previous_experience = models.CharField(
+        verbose_name='Previous MUN Experience',
         help_text='Do you have any previous Model UN conference experience?',
         max_length=1,
         choices=BINARY_CHOICES
     )
     previous_role = models.CharField(
-        verbose_name='Role',
+        verbose_name='Previous Role',
         max_length=3, 
-        choices=CATEGORY_CHOICES, 
+        choices=PREV_CATEGORY_CHOICES, 
         help_text='If yes, please what was your role?',
         blank=True)
     previous_committee = models.CharField(
-        verbose_name='Committee',
-        max_length=50,
+        verbose_name='Previous Committee',
+        max_length=70,
         help_text='Which committee did you participate either as a delegate/official?',
-        blank=True,
-        choices=COMMITTEE_CHOICES
+        blank=True
     )
     point_of_contact = models.CharField(
         max_length=3, 

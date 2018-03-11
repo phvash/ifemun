@@ -8,10 +8,10 @@ class RegistrationForm(forms.ModelForm):
         input_formats=['%Y-%m-%d', '%d-%m-%Y', '%d/%m/%Y', '%d/%m/%y'],
         label='Date of Birth', 
         help_text='Format: DD/MM/YYYY')
-    visa_exp_date = forms.DateField(
+    passport_exp_date = forms.DateField(
         required=False, 
         input_formats=['%Y-%m-%d', '%d-%m-%Y', '%d/%m/%Y', '%d/%m/%y'],
-        label='Visa Expiry Date', 
+        label='Passport Expiry Date', 
         help_text='Format: DD/MM/YYYY')
     class Meta:
         model = Applicant
@@ -23,12 +23,10 @@ class RegistrationForm(forms.ModelForm):
             'dob',
             'email',
             'gender',
-            'postal_address', 
             'home_address',
             'phone_number',
             'country_of_residence',
             'occupation',
-            'postal_address', 
             'programme_of_study',
             'name_of_institution',
             'name_of_Guardian',
@@ -41,7 +39,7 @@ class RegistrationForm(forms.ModelForm):
             'shirt_size',
             'visa_required',
             'passport_number',
-            'visa_exp_date',
+            'passport_exp_date',
             'category',
             'country_choice_one',
             'country_choice_two',
