@@ -50,3 +50,6 @@ def regformfunction(request):
             # form = RegistrationForm()
             return render(request, template_path, {'form': form})
 
+def admin_view(request):
+    return redirect('https://ifemun.herokuapp.com/somelocation/login/')
+
