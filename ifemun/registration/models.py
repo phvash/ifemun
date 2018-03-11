@@ -143,7 +143,8 @@ class Applicant(models.Model):
     committee_choice = models.CharField(
         max_length=8, 
         verbose_name='Committee of Choice',
-        choices=COMMITTEE_CHOICES
+        choices=COMMITTEE_CHOICES,
+        help_text='Kindly check the "Committees" page for details'
     )
     previous_experience = models.CharField(
         verbose_name='Previous MUN Experience',
