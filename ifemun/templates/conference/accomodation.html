@@ -1,0 +1,64 @@
+{% extends "new_base.html" %}
+{% load static %}
+{% block title %}Ifemun | Accomodation {% endblock %}
+{% block content %}
+
+<section id="content">
+    <div class="content-wrap">
+        <div class="container clearfix">
+            <div class="col_two_third bottommargin-lg">
+                <div class="fslider" data-arrows="false">
+                    <div class="flexslider">
+                        <div class="slider-wrap">
+                            <div class="slide">
+                                <a href="#">
+                                    <img src="{% static 'images/conference/accommodation/room1.jpg' %}" alt="Room Image">
+                                </a>
+                            </div>
+                            <div class="slide">
+                                <a href="#">
+                                    <img src="{% static 'images/conference/accommodation/room2.jpg' %}" alt="Room Image">
+                                </a>
+                            </div>
+                        <div class="slide">
+                            <a href="#">
+                                <img src="{% static 'images/conference/accommodation/room1.jpg' %}" alt="Room Image">
+                            </a>
+                        </div>
+                        <div class="slide">
+                            <a href="#">
+                                <img src="{% static 'images/conference/accommodation/room2.jpg' %}" alt="Room Image">
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col_one_third bottommargin-lg col_last">
+                <div class="pricing-box">
+                            <div class="pricing-title">
+                            <h3>Guest House</h3>
+                            </div>
+                            <div class="pricing-price">
+                            <span class="price-unit">&euro;</span>7<span class="price-tenure">/night</span>
+                            </div>
+                            <div class="pricing-features">
+                            <ul>
+                            <li><strong>Full</strong> Access</li>
+                            <li><i class="icon-code"></i> Source Files</li>
+                            <li><strong>100</strong> User Accounts</li>
+                           
+                            <li>Phone &amp; Email Support</li>
+                            </ul>
+                            </div>
+                            <div class="pricing-action">
+                            <a href="#" class="btn btn-danger btn-block btn-lg">Book</a>
+                            </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
