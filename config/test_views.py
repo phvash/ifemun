@@ -5,9 +5,12 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
+from django.utils import timezone
 
 
 from ifemun.registration.forms import RegistrationForm
+from ifemun.blog.models import Post
+
 
 
 class MyView(View):
@@ -53,3 +56,7 @@ def regformfunction(request):
 def admin_view(request):
     return redirect('https://ifemun.herokuapp.com/somelocation/login/')
 
+def home_view(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    template_path = "pages/new_home.html"
+    return render(request, template_path, {'posts': posts[len(posts)-2:len(posts)]})

@@ -192,39 +192,32 @@
             <div class="fancy-title title-border">
             <h4>Recent Posts</h4>
             </div>
-            <div class="col_half nobottommargin">
+            {% for post in posts %}
+                {% if not forloop.last%}
+                    <div class="col_half nobottommargin">
+                {% else %}
+                    <div class="col_half col_last">
+                {% endif %}
             <div class="ipost clearfix">
-            <div class="entry-image" style="padding: 5%">
-                <img alt="100%x180" src="{% static 'images/blog/a.jpeg' %}" class="img-thumbnail">
+            <div class="entry-image" style="padding: 10%; padding-bottom: 0%; padding-left: 0px;">
+                <img alt="100%x180" src="{{ MEDIA_URL }}{{ post.picture }}" class="img-thumbnail">
             </div>
             <div class="entry-title">
-            <h3><a href="blog-single.html">Toyotas next minivan will let you shout at your kids without turning around</a></h3>
+            <h3><a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
             </div>
             <ul class="entry-meta clearfix">
-            <li><i class="icon-calendar3"></i> 10th Feb 2014</li>
-            <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13</a></li>
+            <li><i class="icon-calendar3"></i>{{ post.published_date }}</li>
+            <li><a href="#"><i class="icon-comments"></i> 13</a></li>
             </ul>
             <div class="entry-content">
-            <p>Medecins du Monde eradicate sustainability free expression contribution assessment expert humanitarian relief.</p>
+            <p>{{ post.short_summary }}<a href="{% url 'blog:post_detail' pk=post.pk %}" style="color: #1ABC9C" > ... continue reading</a></p> 
             </div>
             </div>
             </div>
-            <div class="col_half col_last nobottommargin">
-            <div class="ipost clearfix">
-                <div class="entry-image" style="padding: 5%">
-                        <img alt="100%x180" src="{% static 'images/blog/a.jpeg' %}" class="img-thumbnail">
-                </div>
-            <div class="entry-title">
-            <h3><a href="blog-single.html">UK government weighs Tesla's Model S for its ??5 million electric vehicle fleet</a></h3>
-            </div>
-            <ul class="entry-meta clearfix">
-            <li><i class="icon-calendar3"></i> 10th Feb 2014</li>
-            <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13</a></li>
-            </ul>
-            <div class="entry-content">
-            <p>Urban public institutions life-saving women and children Rockefeller combat malaria honesty. Sustainability foster immunize treatment.</p>
-            </div>
-            </div>
+            {% endfor %}
+ 
+            <div class="center clearfix" >
+                    <a href="{% url 'blog:post_list' %}" class="btn btn-outline-secondary float-left">Load More &rarr; </a>
             </div>
             </div>
             <div class="col_one_fourth col_last">
@@ -239,8 +232,11 @@
                         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     </div>
                     </div>
+                    <div class="center">
+                        <a href="#" class="btn btn-secondary btn-sm">Follow Us on Twitter</a>
                     </div>
-            <div class="well ohidden">
+                    </div>
+            <div class="well ohidden topmargin">
                     <div class="fancy-title title-border">
                             <h4>Instagram Feed</h4>
                     </div>
@@ -281,18 +277,6 @@
                 color: #000000;
             }
     </style>
-    <!-- <script src="{% static 'js/instafeed.min.js' %}"></script>
-    <script type="text/javascript">
-        var userFeed = new Instafeed({
-            get: 'user',
-            userId: '7084318071',
-            accessToken: '7084318071.1677ed0.1c82ce11157e4041af30c9b1c9acb55e'
-        });
-        userFeed.run();
-    </script> -->
-    <!-- <script src="{% static 'js/nplugins.js' %}"></script> -->
-    
-
 {% endblock %}
 
 

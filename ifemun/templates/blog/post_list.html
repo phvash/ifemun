@@ -2,20 +2,53 @@
 
 {% block content %}
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+<section id="page-title">
+    <div class="container clearfix">
+        <h1>Blog</h1>
+        <span>Latest News about the conference</span>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Blog</li>
+        </ol>
+    </div>
+</section>
 
-    {% for post in posts %}
-    <div>
-        <h1><a href="{% url 'blog:post_detail' pk=post.pk %}"> {{ post.title }} </a></h1>
-        <p>published: {{ post.published_date|linebreaksbr}}</p>
+<section id="content">
+    <div class="content-wrap">
+    <div class="container clearfix">
+    
+    <div id="posts" class="post-grid grid-container grid-2 clearfix" data-layout="fitRows">
+        {% for post in posts %}
+            <div class="entry clearfix">
+            <div class="entry-image">
+                <a href="{{ MEDIA_URL }}{{ post.picture }}" data-lightbox="image"><img class="image_fade" src="{{ MEDIA_URL }}{{ post.picture }}" alt="Standard Post with Image"></a>
+            </div>
+            <div class="entry-title">
+            <h2><a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+            </div>
+            <ul class="entry-meta clearfix">
+            <li><i class="icon-calendar3"></i> {{ post.published_date }}</li>
+            <li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13</a></li>
+            <li><a href="#"><i class="icon-camera-retro"></i></a></li>
+            </ul>
+            <div class="entry-content">
+            <p>{{ post.short_summary }}</p>
+            <a href="{% url 'blog:post_detail' pk=post.pk %}" class="more-link">Read More</a>
+            </div>
+            </div>
+        {% endfor %}
+    </div>
+  
+    <div class="row mb-3">
+        <div class="col-12">
+            <a href="#" class="btn btn-outline-secondary float-left">&larr; Older</a>
+            <a href="#" class="btn btn-outline-dark float-right">Newer &rarr;</a>
+        </div>
     </div>
 
-    {% endfor %}
+
+    </div>
+    </div>
+</section>
 
 {% endblock %}
-

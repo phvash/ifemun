@@ -57,6 +57,7 @@ THIRD_PARTY_APPS = [
     'django_csv_exports', # export models as csv from django-admin,
     'sorl.thumbnail', # required for thumbnail support
     'django_instagram',
+    'tinymce',
 ]
 
 # Apps specific for this project go here.

@@ -1,19 +1,141 @@
 {% extends "new_base.html" %}
 
+{% load instagram_client %}
+
 {% block content %}
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+<section id="page-title">
+        <div class="container clearfix">
+        <h1>News Update</h1>
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Blog</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Blog Single</li>
+        </ol>
+        </div>
+</section>
 
-    {% if post.published_date %}
-        <p>{{post.published_date}}</p>
-    {% endif %}
+<section id="content">
+        <div class="content-wrap">
+        <div class="container clearfix">
+        
+        <div class="postcontent nobottommargin clearfix">
+        <div class="single-post nobottommargin">
+        
+        <div class="entry clearfix">
+        
+        <div class="entry-title">
+        <h2>{{ post.title }}</h2>
+        </div>
+        
+        <ul class="entry-meta clearfix">
+        <li><i class="icon-calendar3"></i>{{post.published_date}}</li>
+        <li><a href="#"><i class="icon-user"></i> admin</a></li>
+        <li><i class="icon-folder-open"></i> <a href="#">General</a>, <a href="#">Media</a></li>
+        <li><a href="#"><i class="icon-comments"></i> 0 Comments</a></li>
+        <li><a href="#"><i class="icon-camera-retro"></i></a></li>
+        </ul>
+        
+        
+        <div class="entry-content notopmargin">
 
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.text }}</p>
+            <div class="entry-image alignleft">
+                <a href="{{ MEDIA_URL }}{{ post.picture }}"><img src="{{ MEDIA_URL }}{{ post.picture }}" alt="Blog Image"></a>
+            </div>
+    
+        <p>{{ post.text|safe }}</p>
+          
+        
+        <div class="tagcloud clearfix bottommargin">
+        <a href="#">general</a>
+        <a href="#">information</a>
+        <a href="#">media</a>
+        <a href="#">press</a>
+        <a href="#">gallery</a>
+        </div>
+        <div class="clear"></div>
+        
+        <div class="si-share noborder clearfix">
+        <span>Share this Post:</span>
+        <div>
+        <a href="#" class="social-icon si-borderless si-facebook">
+        <i class="icon-facebook"></i>
+        <i class="icon-facebook"></i>
+        </a>
+        <a href="#" class="social-icon si-borderless si-twitter">
+        <i class="icon-twitter"></i>
+        <i class="icon-twitter"></i>
+        </a>
+        <a href="#" class="social-icon si-borderless si-pinterest">
+        <i class="icon-pinterest"></i>
+        <i class="icon-pinterest"></i>
+        </a>
+        <a href="#" class="social-icon si-borderless si-gplus">
+        <i class="icon-gplus"></i>
+        <i class="icon-gplus"></i>
+        </a>
+        <a href="#" class="social-icon si-borderless si-rss">
+         <i class="icon-rss"></i>
+        <i class="icon-rss"></i>
+        </a>
+        <a href="#" class="social-icon si-borderless si-email3">
+        <i class="icon-email3"></i>
+        <i class="icon-email3"></i>
+        </a>
+        </div>
+        </div>
+        </div>
+        </div>
+                
+
+        </div>
+        </div>
+        
+        <div class="sidebar nobottommargin col_last clearfix">
+        <div class="sidebar-widgets-wrap">
+                <div class="widget clearfix">
+                        <div class="well ohidden">
+                                <div class="fancy-title title-border">
+                                        <h4>Instagram Feed</h4>
+                                </div>
+                            <div class="row no-gutters">
+                                    {% instagram_user_recent_media ifemodelun %}
+                                    {% if recent_media|length > 9 %}
+                                        {% for media in recent_media|slice:"0:9" %}
+                                            <div class="col-4" style="padding: 0.5px;">
+                                                    <a href="//instagram.com/p/{{ media.shortcode }}" target="_blank"><img src="{{ media.thumbnail_src|thumbnail }}" alt="IG Feed"/></a>
+                                            </div>
+                                        {% endfor %}
+                                    {% else %}
+                                        {% for media in recent_media|slice:"0:9" %}
+                                            <div class="col-4" style="padding: 0.5px;">
+                                                    <a href="//instagram.com/p/{{ media.shortcode }}" target="_blank"><img src="{{ media.thumbnail_src|thumbnail }}" alt="IG Feed"/></a>
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                            </div>
+                        </div>
+                </div>
+        <div class="widget clearfix">
+                <div class="fslider testimonial nopadding noborder noshadow" data-animation="slide" data-arrows="false">
+                        <div class="flexslider">
+                        <div class="slider-wrap">
+                                <a class="twitter-timeline"
+                                    href="https://twitter.com/ifemodelun"
+                                    data-height="300">
+                                </a>
+                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
+                        </div>
+                        </div>
+                        <a href="#" class="btn btn-secondary btn-sm fright">Follow Us on Twitter</a>
+        </div>
+        
+
+        </div>
+        </div>
+        </div>
+        </div>
+</section>
 
 {% endblock %}
