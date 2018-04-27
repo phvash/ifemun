@@ -3,27 +3,6 @@
 {% block title %}Ifemun | Registration{% endblock %}
 {% block content %}
 
-<section id="slider" class=="slider-element slider-parallax full-screen force-full-screen" >
-
-        <!-- <div class="section dark nomargin noborder ohidden" style="padding: 120px 0;"> -->
-        
-        <div class="slider-parallax-inner">
-        
-            <div class="full-screen force-full-screen dark section nopadding nomargin noborder ohidden" style="background-image: url('{% static "images/oau2.jpg" %}'); background-size: cover; background-position: center center;">
-
-                <div class="container center">
-                    <div class="vertical-middle">
-                        
-                    </div>
-                </div>
-
-        </div>
-        </div>
-
-        </div>
-
-</section>
-
 <section id="page-title" class="page-title-mini">
 
     <div class="container clearfix">
@@ -58,7 +37,7 @@
                                     <h3>Register for Conference</h3>
                     
 
-                                    <form id="register-form" name="register-form" class="nobottommargin" method="post" action="{% url 'submit' %}">
+                                    <form id="register-form" name="register-form" class="nobottommargin" method="post" action="https://ifemun.herokuapp.com/submit/">
                                             {% csrf_token %}
                                             {% include 'base_form.html' with form=form %}
                                             <P>

@@ -8,7 +8,7 @@ from django.http import HttpResponse
 
 import csv
 
-from .test_views import MyView, RegistrationSubmit, regformfunction
+from .test_views import MyView, RegistrationSubmit, regformfunction, admin_view, home_view
 
 
 def some_view(request):
@@ -22,11 +22,12 @@ def some_view(request):
     return response
 
 urlpatterns = [
-    url(r'^$', TemplateView.as_view(template_name='pages/new_home.html'), name='home'),
+    url(r'^$', home_view, name='home'),
     url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
     url(r'^hi/$', MyView.as_view(), name='bullshit'),
     url(r'^submit/$', regformfunction, name='submit'),
     url(r'^.well-known/acme-challenge/9P-9e5iWbA7L2-xAxOjjNoJDhsyET6f0xG4_r26f_PQ$', some_view, name=''),
+    url(r'^somelocation/$', admin_view, name='admin-login'),
 
     # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, admin.site.urls),
@@ -34,6 +35,9 @@ urlpatterns = [
     # User management
     url(r'^users/', include('ifemun.users.urls', namespace='users')),
     url(r'^accounts/', include('allauth.urls')),
+
+    # rich text html
+    url(r'^tinymce/', include('tinymce.urls')),
 
 
     # Your stuff: custom urls includes go here
