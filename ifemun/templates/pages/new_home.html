@@ -2,6 +2,8 @@
 
 {% load static %}
 
+{% load instagram_client %}
+
 {% block content %}
 
 <section id="slider" class=="slider-element slider-parallax full-screen force-full-screen" >
@@ -31,7 +33,7 @@
 
                         </div>
 
-                        <a href="{% url 'conference:registration' %}" class="button button-border button-light button-circle t400" >Register</a>
+                        <a href="{% url 'registration:reg-form' %}" class="button button-border button-light button-circle t400" >Register</a>
 
                         
                     </div>
@@ -50,84 +52,85 @@
     ============================================= -->
     <section id="content">
 
-            <div class="content-wrap nopadding">
+        <div class="content-wrap nopadding">
 
-                <div id="section-about" class="page-section">
+            <div id="section-about" class="page-section" style="padding-bottom: 0px;">
 
-                    <div class="container">
+                <div class="container">
 
-                        <h2 class="divcenter center bottommargin font-body" style="max-width: 700px; font-size: 30px;">Welcome Address</h2>
+                    <h2 class="divcenter center bottommargin font-body" style="max-width: 700px; font-size: 30px;">Welcome Address</h2>
 
-                        <div class="col">
-                            <div class="pull-left">
-                                <img src="{% static 'images/people/sec-gen.jpg' %}" alt="Secretary General" width="400px" class="pix"/>
-                            </div>
-                            <div class="pull-left">
-                                    <p>
-                                        Dear delegates, Advisors, and global citizens,
-                                    </p>
-                                    <p style="text-align: justify;">
-                                        It is my pleasure to heartily welcome you to the official website of the first IFE Model United Nations 2018 and invite you to apply to be part of this year’s convening of IFE Model UN, which is to be held from June 20 – 23, 2018. This conference offers a truly unique experience for participants with passion for international affairs, international law, lobbying and in general, global problem solving at which young individuals role-play delegates to some of the most important multilateral organisations.
-                                    </p>
-                                    <p style="text-align: justify;">
-                                        Following months of preparation and planning, the Secretariat and volunteers of IFEMUN  are excited to host you to a delightful atmosphere of substantive excellence, real-time diplomacy, multilateralism and social experience at Obafemi Awolowo University, Ile Ife built at the heart of the ancient city of civilization. Over the course of three days, delegates are presented the opportunity to interact with roughly 700 delegates from all over the world, to learn with our staff and engage with all that our beautiful and inspiring university campus has to offer.
-                                    </p>
-                                    <p style="text-align: justify;">
-                                        We are looking to help our participants channel their passion and further their understanding to not only of multilateral organisations, diplomacy and formal debate at UN but also by hosting a series of academic lectures with experts and decision makers.  It is our pride to see that every delegates in IFEMUN leaves the conference more prepared and inspired to be future global leaders and change agents. 
-                                    </p>
-                                    <p style="text-align: justify;">
-                                        The themes of this year’s conference is  <em><u><q>Achieving Human Development: Striving for Peace and Decent Life in a Sustainable World</q></u></em>.  This theme fully wraps together, issues central to global peace and development pronounced in peace, improved standard of living and sustainable communities. For our maiden edition, you will be able to apply into any of the following committees:
-                                    </p>
-                                        <ul>
-                                            <li>
-                                                UN Security Council
-                                            </li>
-                                            <li>
-                                                UN General Assembly First Committee, DISEC 
-                                            </li>
-                                            <li>
-                                                International Olympic Committee
-                                            </li>
-                                            <li>
-                                                UNESCO
-                                            </li>
-                                            <li>
-                                                UNCHR
-                                            </li>
-                                            <li>
-                                                UN General Assembly Third Committee, ECOFIN
-                                            </li>
-
-                                        </ul>
-                                <p style="text-align: justify;">
-                                        Also, delegates shall be opened to apply as NGOs observing in assigned committees, they include, Right to Play, Amnesty International, Doctors Without Borders and Reporters without Borders.
-                                        We are therefore looking for individuals to attend the conference organized in partnership and  support of the United Nations Information Centre in Nigeria, All Nigeria United Nations Student and Youth Association and International Relations Student Association at the host university. 
+                    <div class="col">
+                        <div class="pull-left">
+                            <img src="{% static 'images/people/sec-gen.jpg' %}" alt="Secretary General" width="400px" class="pix"/>
+                        </div>
+                        <div class="pull-left">
+                                <p>
+                                    Dear delegates, Advisors, and global citizens,
                                 </p>
                                 <p style="text-align: justify;">
-                                        Our delegates will debate and reflect on two topics per committee and the topics will represent a broad range of academic discipline: from international relations to international finance, sport and law. As an educational conference, we put skills and academic development at the forefront, where merits and hardwork will be duly rewarded. 
+                                    It is my pleasure to heartily welcome you to the official website of the first IFE Model United Nations 2018 and invite you to apply to be part of this year’s convening of IFE Model UN, which is to be held from June 20 – 23, 2018. This conference offers a truly unique experience for participants with passion for international affairs, international law, lobbying and in general, global problem solving at which young individuals role-play delegates to some of the most important multilateral organisations.
                                 </p>
                                 <p style="text-align: justify;">
-                                        It is my sincere hope that delegates will walk away from IFEMUN with improved model UN skills, new connections, international relations knowledge and the desire to make a difference as future leaders. I am looking forward to seeing what delegates will achieve at this year’s conference! Thank you very much.
+                                    Following months of preparation and planning, the Secretariat and volunteers of IFEMUN  are excited to host you to a delightful atmosphere of substantive excellence, real-time diplomacy, multilateralism and social experience at Obafemi Awolowo University, Ile Ife built at the heart of the ancient city of civilization. Over the course of three days, delegates are presented the opportunity to interact with roughly 700 delegates from all over the world, to learn with our staff and engage with all that our beautiful and inspiring university campus has to offer.
                                 </p>
-
-                                <p>Cordially, <br/>
-                                <em>Ojunde Patrick Opeyemi</em><br/>
-                                <strong>Secretary General, IFEMUN 2018</strong>
+                                <p style="text-align: justify;">
+                                    We are looking to help our participants channel their passion and further their understanding to not only of multilateral organisations, diplomacy and formal debate at UN but also by hosting a series of academic lectures with experts and decision makers.  It is our pride to see that every delegates in IFEMUN leaves the conference more prepared and inspired to be future global leaders and change agents. 
                                 </p>
+                                <p style="text-align: justify;">
+                                    The themes of this year’s conference is  <em><u><q>Achieving Human Development: Striving for Peace and Decent Life in a Sustainable World</q></u></em>.  This theme fully wraps together, issues central to global peace and development pronounced in peace, improved standard of living and sustainable communities. For our maiden edition, you will be able to apply into any of the following committees:
+                                </p>
+                                    <ul>
+                                        <li>
+                                            UN Security Council
+                                        </li>
+                                        <li>
+                                            UN General Assembly First Committee, DISEC 
+                                        </li>
+                                        <li>
+                                            International Olympic Committee
+                                        </li>
+                                        <li>
+                                            UNESCO
+                                        </li>
+                                        <li>
+                                            UNCHR
+                                        </li>
+                                        <li>
+                                            UN General Assembly Third Committee, ECOFIN
+                                        </li>
 
-        
-                            </div>
+                                    </ul>
+                            <p style="text-align: justify;">
+                                    Also, delegates shall be opened to apply as NGOs observing in assigned committees, they include, Right to Play, Amnesty International, Doctors Without Borders and Reporters without Borders.
+                                    We are therefore looking for individuals to attend the conference organized in partnership and  support of the United Nations Information Centre in Nigeria, All Nigeria United Nations Student and Youth Association and International Relations Student Association at the host university. 
+                            </p>
+                            <p style="text-align: justify;">
+                                    Our delegates will debate and reflect on two topics per committee and the topics will represent a broad range of academic discipline: from international relations to international finance, sport and law. As an educational conference, we put skills and academic development at the forefront, where merits and hardwork will be duly rewarded. 
+                            </p>
+                            <p style="text-align: justify;">
+                                    It is my sincere hope that delegates will walk away from IFEMUN with improved model UN skills, new connections, international relations knowledge and the desire to make a difference as future leaders. I am looking forward to seeing what delegates will achieve at this year’s conference! Thank you very much.
+                            </p>
 
+                            <p>Cordially, <br/>
+                            <em>Ojunde Patrick Opeyemi</em><br/>
+                            <strong>Secretary General, IFEMUN 2018</strong>
+                            </p>
+
+    
                         </div>
 
-                        <div class="divcenter center">
-                            <p class="bottommargin" style="font-size: 16px;"><a href="{% url 'about' %}" data-scrollto="#section-services" data-easing="easeInOutExpo" data-speed="1250" data-offset="70" class="more-link center">Learn more <i class="icon-angle-right"></i></a></p>
-
-                        </div>
-                       
                     </div>
+
+                    <div class="divcenter center">
+                        <p class="bottommargin" style="font-size: 16px;"><a href="{% url 'about' %}" data-scrollto="#section-services" data-easing="easeInOutExpo" data-speed="1250" data-offset="70" class="more-link center">Learn more <i class="icon-angle-right"></i></a></p>
+
+                    </div>
+                    
                 </div>
             </div>
+        </div>
+
 
             <div class="">
                     <div class="container clearfix">
@@ -182,30 +185,82 @@
                     </div>
                 </div>
 
-
-            <!-- <div id="section-blog" class="page-section">
-
-					<h2 class="center uppercase t300 ls3 font-body">Recently From the Blog</h2>
-
-					<div class="section nobottommargin">
-						<div class="container clearfix">
-
-							<div class="row topmargin clearfix">
-                                    {% for post in posts %}
-                                    <div>
-                                        <h1><a href="{% url 'blog:post_detail' pk=post.pk %}"> {{ post.title }} </a></h1>
-                                        <p>published: {{ post.published_date|linebreaksbr}}</p>
-                                    </div>
-                                
-                                    {% endfor %}
-							</div>
-
-						</div>
-					</div>
-
-				</div> -->
-
     </section>
+
+    <div class="container clearfix">
+            <div class="col_three_fourth">
+            <div class="fancy-title title-border">
+            <h4>Recent Posts</h4>
+            </div>
+            {% for post in posts %}
+                {% if not forloop.last%}
+                    <div class="col_half nobottommargin">
+                {% else %}
+                    <div class="col_half col_last">
+                {% endif %}
+            <div class="ipost clearfix">
+            <div class="entry-image" style="padding: 10%; padding-bottom: 0%; padding-left: 0px;">
+                <img alt="100%x180" src="{{ MEDIA_URL }}{{ post.picture }}" class="img-thumbnail">
+            </div>
+            <div class="entry-title">
+            <h3><a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
+            </div>
+            <ul class="entry-meta clearfix">
+            <li><i class="icon-calendar3"></i>{{ post.published_date }}</li>
+            <li><a href="#"><i class="icon-comments"></i> 13</a></li>
+            </ul>
+            <div class="entry-content">
+            <p>{{ post.short_summary }}<a href="{% url 'blog:post_detail' pk=post.pk %}" style="color: #1ABC9C" > ... continue reading</a></p> 
+            </div>
+            </div>
+            </div>
+            {% endfor %}
+ 
+            <div class="center clearfix" >
+                    <a href="{% url 'blog:post_list' %}" class="btn btn-outline-secondary float-left">Load More &rarr; </a>
+            </div>
+            </div>
+            <div class="col_one_fourth col_last">
+                    <div class="fslider testimonial nopadding noborder noshadow" data-animation="slide" data-arrows="false">
+                    <div class="flexslider">
+                    <div class="slider-wrap">
+                            <a class="twitter-timeline"
+                                href="https://twitter.com/ifemodelun"
+                                data-height="300">
+                                Tweets by @IFEMODELUN
+                            </a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                    </div>
+                    <div class="center">
+                        <a href="#" class="btn btn-secondary btn-sm">Follow Us on Twitter</a>
+                    </div>
+                    </div>
+            <div class="well ohidden topmargin">
+                    <div class="fancy-title title-border">
+                            <h4>Instagram Feed</h4>
+                    </div>
+                    <div class="row no-gutters">
+                            {% instagram_user_recent_media ifemodelun %}
+                            {% if recent_media|length > 9 %}
+                                {% for media in recent_media|slice:"0:9" %}
+                                    <div class="col-4" style="padding: 0.5px;">
+                                            <a href="//instagram.com/p/{{ media.shortcode }}" target="_blank"><img src="{{ media.thumbnail_src|thumbnail }}" alt="IG Feed"/></a>
+                                    </div>
+                                {% endfor %}
+                            {% else %}
+                                {% for media in recent_media|slice:"0:9" %}
+                                    <div class="col-4" style="padding: 0.5px;">
+                                            <a href="//instagram.com/p/{{ media.shortcode }}" target="_blank"><img src="{{ media.thumbnail_src|thumbnail }}" alt="IG Feed"/></a>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                    </div>
+            </div>
+            </div>
+            <div class="clear"></div>
+            </div>
+
 
     <style>            
             div.transbox {
@@ -222,7 +277,6 @@
                 color: #000000;
             }
     </style>
-
 {% endblock %}
 
 

@@ -9,9 +9,12 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 """
 from django.contrib.messages import constants as messages
 import environ
+import os
 
 ROOT_DIR = environ.Path(__file__) - 3  # (ifemun/config/settings/base.py - 3 = ifemun/)
+# ROOT_DIR = "/home/ifemunor/public_html/python/ifemun/"
 APPS_DIR = ROOT_DIR.path('ifemun')
+# APPS_DIR = "/home/ifemunor/public_html/python/ifemun/ifemun"
 
 # Load operating system environment variables and then prepare to use them
 env = environ.Env()
@@ -51,7 +54,10 @@ THIRD_PARTY_APPS = [
     'allauth.account',  # registration
     'allauth.socialaccount',  # registration
     'widget_tweaks', # form styling
-    'django_csv_exports', # export models as csv from django-admin
+    'django_csv_exports', # export models as csv from django-admin,
+    'sorl.thumbnail', # required for thumbnail support
+    'django_instagram',
+    'tinymce',
 ]
 
 # Apps specific for this project go here.
@@ -61,6 +67,7 @@ LOCAL_APPS = [
     'ifemun.blog.apps.BlogConfig',
     'ifemun.conference.apps.ConferenceConfig',
     'ifemun.committees.apps.CommitteesConfig',
+    'ifemun.registration.apps.RegistrationConfig',
     # Your stuff: custom apps go here
 ]
 
@@ -126,7 +133,7 @@ DATABASES = {
         'PORT': '3306',
         'OPTIONS': {
             'charset': 'utf8mb4',
-            "init_command": "SET foreign_key_checks = 0;",
+            "init_command": "SET foreign_key_checks = 0; SET sql_mode='STRICT_TRANS_TABLES';",
         },
         'TEST': {
             'CHARSET': 'utf8mb4',
@@ -277,6 +284,7 @@ AUTHENTICATION_BACKENDS = [
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_MAX_LENGTH = 100
 
 ACCOUNT_ALLOW_REGISTRATION = env.bool('DJANGO_ACCOUNT_ALLOW_REGISTRATION', True)
 ACCOUNT_ADAPTER = 'ifemun.users.adapters.AccountAdapter'
@@ -304,3 +312,6 @@ MESSAGE_TAGS = {
     messages.WARNING: 'alert-warning',
     messages.ERROR: 'alert-danger',
 }
+
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', 
+default=['www.ifemun.org', 'ifemun.org', '127.0.0.1'])

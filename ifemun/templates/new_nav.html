@@ -12,12 +12,12 @@
                 ============================================= -->
                 <div id="logo">
                     <a href="{% url 'home' %}" class="standard-logo" ><img src="{% static 'images/logo.png' %}" alt="Ifemun Logo"></a>
+                    <a href="{% url 'home' %}" class="retina-logo" ><img src="{% static 'images/logo.png' %}" alt="Ifemun Logo"></a>
                 </div>
                 <!-- #logo end -->
-
-                <!-- <div id="logo">
-                        <a href="{% url 'home' %}" class="standard-logo" >Ifemun</a>
-                        <a href="{% url 'home' %}" class="retina-logo" >Ifemun</a>
+<!-- 
+                <div id="logo">
+                        <a href="{% url 'home' %}" class="retina-logo" ><img src="{% static 'images/logo.png' %}" alt="Ifemun Logo"></a>
                 </div> -->
 
                 <!-- Primary Navigation
@@ -26,10 +26,21 @@
                     <ul class="one-page-menu" data-easing="easeInOutExpo" data-speed="1250" data-offset="65">
                         <li><a href="{% url 'home' %}"><div>Home</div></a></li>
                         <li><a href="{% url 'about' %}"><div>About</div></a></li>
-                        <li><a href="{% url 'conference:registration' %}"><div>Registration</div></a></li>
-                        <li><a href="{% url 'conference:conference-home' %}"><div>Conference</div></a></li>
+                        <li><a><div>Registration</div></a>
+                            <ul>
+                                    <li class="sub-menu"><a href="{% url 'registration:reg-form' %}"><div>Register</div></a></li>
+                                    <li class="sub-menu"><a href="{% url 'registration:accomodation' %}"><div>Accomodation</div></a></li>
+                             </ul>
+                        </li>
+                        <li>
+                            <a><div>Conference</div></a>
+                            <ul>
+                                <li class="sub-menu"><a href="{% url 'conference:schedule' %}"><div>Schedule</div></a></li>
+                                <li class="sub-menu"><a href="#"><div>Speakers</div></a></li>
+                            </ul>
+                        </li>
                         <li><a href="{% url 'committees:committees_home' %}"><div>Committees</div></a></li>
-                        <li><a href="https://ifemodelun.wordpress.com"><div>Blog</div></a></li>
+                        <li><a href="{% url 'blog:post_list' %}"><div>Blog</div></a></li>
                     </ul>
 
                     <!-- <div id="side-panel-trigger" class="side-panel-trigger"><a href="#"><i class="icon-reorder"></i></a></div> -->

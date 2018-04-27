@@ -1,9 +1,7 @@
 from django.conf.urls import url
 from django.views.generic import TemplateView
-from . import views
 
 
 urlpatterns = [
-    url(r'^register$', views.RegistrationPage.as_view(), name='registration'),
-    url(r'^$', TemplateView.as_view(template_name='conference/new_home.html'), name='conference-home'),
+    url(r'^$', TemplateView.as_view(template_name='conference/schedule.html'), name='schedule'),
 ]
