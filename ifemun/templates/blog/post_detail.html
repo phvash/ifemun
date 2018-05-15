@@ -42,7 +42,7 @@
         <div class="entry-content notopmargin">
 
             <div class="entry-image alignleft">
-                <a href='{% cloudinary_url post.picture.public_id %}'><img src='{% cloudinary_url post.picture.public_id %}' alt="Blog Image"></a>
+                <a href="{{ post.picture }}"><img src="{{ post.picture }}" alt="Blog Image"></a>
             </div>
     
         <p>{{ post.text|safe }}</p>

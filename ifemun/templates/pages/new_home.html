@@ -4,8 +4,6 @@
 
 {% load instagram_client %}
 
-{% load cloudinary %}
-
 {% block content %}
 
 <link rel="stylesheet" href="{% static 'css/clock.css' %}" type="text/css" />
@@ -48,63 +46,6 @@
 
         </div>
         </section>
-
-<!-- <section id="slider" class=="slider-element slider-parallax full-screen force-full-screen" >
-        
-        <div class="slider-parallax-inner">
-        
-            <div class="full-screen force-full-screen dark section nopadding nomargin noborder ohidden" style="background-image: url('{% static "images/bg4.jpg" %}'); background-size: cover; background-position: center center;">
-
-                <div class="container center">
-                    <div class="vertical-middle">
-
-                        <div class="emphasis-title transbox">
-                            <h2>
-                                    <p>IFEMUN 2018</p>
-                            </h2>
-                            <h3>
-                                    <p>
-                                        Theme: Achieving Human Development: Striving for Peace and Decent Life in a Sustainable World
-                                    </p>
-                            </h3>
-
-                            <h3>
-                                <p><i>June 20th - 23rd, 2018</i></p>
-                            </h3>
-
-                        </div>
-
-                        <a href="{% url 'registration:reg-form' %}" class="button button-border button-light button-circle t400" >Register</a>
-                        
-                        <div id="clockdiv" class="center">
-                                <div>
-                                    <span id="days" class="days"></span>
-                                    <div class="smalltext">Days</div>
-                                </div>
-                                <div>
-                                    <span id="hours" class="hours"></span>
-                                    <div class="smalltext">Hours</div>
-                                </div>
-                                <div>
-                                    <span id="minutes" class="minutes"></span>
-                                    <div class="smalltext">Minutes</div>
-                                </div>
-                                <div>
-                                    <span id="seconds" class="seconds"></span>
-                                    <div class="smalltext">Seconds</div>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-
-        </div>
-        </div>
-
-        </div>
-
-</section> -->
-
-
 
     <!-- Content
     ============================================= -->
@@ -258,7 +199,7 @@
                 {% endif %}
             <div class="ipost clearfix">
             <div class="entry-image" style="padding: 10%; padding-bottom: 0%; padding-left: 0px;">
-                <img alt="Post thumbnail" src='{% cloudinary_url post.picture.public_id %}' class="img-thumbnail">
+                <img alt="Post thumbnail" src="{{ post.picture }}" class="img-thumbnail">
             </div>
             <div class="entry-title">
             <h3><a href="{% url 'blog:post_detail' pk=post.id %}">{{ post.title }}</a></h3>

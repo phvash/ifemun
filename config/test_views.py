@@ -69,6 +69,11 @@ def home_view(request):
     r = requests.get('http://ifemun.herokuapp.com/blog/api')
     r.encoding = 'ascii'
     posts = json.loads(r.text, object_pairs_hook=str_hook)
+    for post in posts:
+        try:
+            post['picture'] = 'http://res.cloudinary.com/phvash/' + post['picture']
+        except:
+            pass
     template_path = "pages/new_home.html"
     return render(request, template_path, {'posts': posts[len(posts)-2:len(posts)]})
 

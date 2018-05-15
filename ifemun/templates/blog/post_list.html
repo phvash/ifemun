@@ -24,7 +24,7 @@
         {% for post in posts %}
             <div class="entry clearfix">
             <div class="entry-image">
-                <a href='{% cloudinary_url post.picture.public_id %}' data-lightbox="image"><img class="image_fade" src='{% cloudinary_url post.picture.public_id %}' alt="Post Image"></a>
+                <a href="{{ post.picture }}" data-lightbox="image"><img class="image_fade" src="{{ post.picture }}" alt="Post Image"></a>
             </div>
             <div class="entry-title">
             <h2><a href="{% url 'blog:post_detail' pk=post.id %}">{{ post.title }}</a></h2>
