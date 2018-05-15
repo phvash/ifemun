@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/dev/ref/settings/
 from django.contrib.messages import constants as messages
 import environ
 import os
+import cloudinary
 
 ROOT_DIR = environ.Path(__file__) - 3  # (ifemun/config/settings/base.py - 3 = ifemun/)
 # ROOT_DIR = "/home/ifemunor/public_html/python/ifemun/"
@@ -58,6 +59,8 @@ THIRD_PARTY_APPS = [
     'sorl.thumbnail', # required for thumbnail support
     'django_instagram',
     'tinymce',
+    'rest_framework',
+    'cloudinary',
 ]
 
 # Apps specific for this project go here.
@@ -315,3 +318,11 @@ MESSAGE_TAGS = {
 
 ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', 
 default=['www.ifemun.org', 'ifemun.org', '127.0.0.1'])
+
+# cloudinary config
+# move to environment variables
+cloudinary.config(
+    cloud_name = 'phvash',
+    api_key = 227569413472821,
+    api_secret = 'KXZxhiVU8LayPkcx4GfaDL4ObJI'
+)

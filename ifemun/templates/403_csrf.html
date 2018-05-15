@@ -1,9 +1,62 @@
-{% extends "base.html" %}
+{% extends "new_base.html" %}
 
-{% block title %}Forbidden (403){% endblock %}
+{% block title %}Page not found{% endblock %}
+
 
 {% block content %}
-<h1>Forbidden (403)</h1>
-
-<p>CSRF verification failed. Request aborted.</p>
+<section id="page-title">
+        <div class="container clearfix">
+        <h1>Page Not Found</h1>
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'blog:post_list' %}">Blog</a></li>
+        <li class="breadcrumb-item active" aria-current="page">403</li>
+        </ol>
+        </div>
+        </section>
+        
+        <section id="content">
+        <div class="content-wrap">
+        <div class="container clearfix">
+        <div class="col_half nobottommargin">
+        <div class="error404 center">403</div>
+        </div>
+        <div class="col_half nobottommargin col_last">
+        <div class="heading-block nobottomborder">
+        <h4>CSRF verification failed</h4>
+        </div>
+        <form action="#" method="get" role="form" class="nobottommargin">
+        <div class="input-group input-group-lg">
+        <input type="text" class="form-control" placeholder="Search for Pages...">
+        <div class="input-group-append">
+        <button class="btn btn-danger" type="button">Search</button>
+        </div>
+        </div>
+        </form>
+        <div class="col_one_third widget_links topmargin nobottommargin">
+        <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'conference:schedule' %}">Conference Schedule</a></li>
+        </ul>
+        </div>
+        <div class="col_one_third widget_links topmargin nobottommargin">
+        <ul>
+        <li><a href="{% url 'conference:accomodation' %}">Accomodation</a></li>
+        <li><a href="{% url 'conference:speakers' %}">Speakers</a></li>
+        <li><a href="{% url 'conference:special-event' %}">Special Events</a></li>
+        </ul>
+        </div> 
+        <div class="col_one_third widget_links topmargin nobottommargin col_last">
+        <ul>
+        <li><a href="{% url 'staff' %}">Staff</a></li>
+        <li><a href="{% url 'committees:committees_home' %}">Committees</a></li>
+        <li><a href="{% url 'blog:post_list' %}">Blog</a></li>
+        </ul>
+        </div>
+        </div>
+        </div>
+        </div>
+        </section>
+        
 {% endblock content %}
