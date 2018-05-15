@@ -11,6 +11,8 @@ from django.utils import timezone
 from ifemun.registration.forms import RegistrationForm
 from ifemun.blog.models import Post
 
+import requests
+import json
 
 
 class MyView(View):
@@ -56,7 +58,16 @@ def regformfunction(request):
 def admin_view(request):
     return redirect('https://ifemun.herokuapp.com/somelocation/login/')
 
+def str_hook(obj):
+    return {k.encode('utf-8') if isinstance(k,unicode) else k :
+            v.encode('utf-8') if isinstance(v, unicode) else v
+            for k,v in obj}
+
 def home_view(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    # posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    r = requests.get('http://127.0.0.1:8000/blog/api')
+    r.encoding = 'ascii'
+    posts = json.loads(r.text, object_pairs_hook=str_hook)
     template_path = "pages/new_home.html"
     return render(request, template_path, {'posts': posts[len(posts)-2:len(posts)]})
+

@@ -200,17 +200,17 @@
                 {% endif %}
             <div class="ipost clearfix">
             <div class="entry-image" style="padding: 10%; padding-bottom: 0%; padding-left: 0px;">
-                <img alt="100%x180" src="{{ MEDIA_URL }}{{ post.picture }}" class="img-thumbnail">
+                <img alt="100%x180" src="http://127.0.0.1:8000{{ post.picture }}" class="img-thumbnail">
             </div>
             <div class="entry-title">
-            <h3><a href="{% url 'blog:post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
+            <h3><a href="{% url 'blog:post_detail' pk=post.id %}">{{ post.title }}</a></h3>
             </div>
             <ul class="entry-meta clearfix">
             <li><i class="icon-calendar3"></i>{{ post.published_date }}</li>
             <li><a href="#"><i class="icon-comments"></i> 13</a></li>
             </ul>
             <div class="entry-content">
-            <p>{{ post.short_summary }}<a href="{% url 'blog:post_detail' pk=post.pk %}" style="color: #1ABC9C" > ... continue reading</a></p> 
+            <p>{{ post.short_summary }}<a href="{% url 'blog:post_detail' pk=post.id %}" style="color: #1ABC9C" > ... continue reading</a></p> 
             </div>
             </div>
             </div>
