@@ -2,15 +2,17 @@
 
 {% load instagram_client %}
 
+{% load cloudinary %}
+
 {% block content %}
 
 <section id="page-title">
         <div class="container clearfix">
         <h1>News Update</h1>
         <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Blog</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Blog Single</li>
+        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'blog:post_list' %}">Blog</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Post</li>
         </ol>
         </div>
 </section>
@@ -40,7 +42,7 @@
         <div class="entry-content notopmargin">
 
             <div class="entry-image alignleft">
-                <a href="http://127.0.0.1:8000{{ post.picture }}"><img src="http://127.0.0.1:8000{{ post.picture }}" alt="Blog Image"></a>
+                <a href='{% cloudinary_url post.picture.public_id %}'><img src='{% cloudinary_url post.picture.public_id %}' alt="Blog Image"></a>
             </div>
     
         <p>{{ post.text|safe }}</p>

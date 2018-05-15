@@ -41,6 +41,7 @@ class RegistrationSubmit(TemplateView):
             # form = RegistrationForm()
             return render(request, template_path, {'form': form})
 
+@csrf_exempt
 def regformfunction(request):
     if request.method == "POST":
         form = RegistrationForm(request.POST)
@@ -49,8 +50,8 @@ def regformfunction(request):
             delegate = form.save(commit=False)
             delegate.save()
             # update this to point to success message
-            messages.success(request, 'Your registration was successful!')
-            return redirect('home')
+            # messages.success(request, 'Your registration was successful!')
+            return redirect('https://ifemun.org/registration/success/')
         else:
             # form = RegistrationForm()
             return render(request, template_path, {'form': form})
@@ -65,7 +66,7 @@ def str_hook(obj):
 
 def home_view(request):
     # posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    r = requests.get('http://127.0.0.1:8000/blog/api')
+    r = requests.get('http://ifemun.herokuapp.com/blog/api')
     r.encoding = 'ascii'
     posts = json.loads(r.text, object_pairs_hook=str_hook)
     template_path = "pages/new_home.html"

@@ -1,0 +1,79 @@
+@import url('http://fonts.googleapis.com/css?family=Lato:300,400,700,900'); 
+
+
+/* ---------------------------------------------------------
+ *	Timer
+ * --------------------------------------------------------- */
+
+#countdown {
+	font-size: 30px;
+	color: #fff;
+	line-height: 24px;
+	margin: 0 0 25px;
+}
+
+.countdown-section {
+	display: inline-block;
+	padding: 5px 14px;
+	border-right: 1px solid rgba(255,255,255,0.3);
+}
+
+.countdown-section:last-child {
+	border-right: none;
+}
+
+.countdown-section b {
+	font-size: 20px;
+	display: block;
+}
+
+.countdown-section span {
+	font-size: 12px;
+	display: block;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	#countdown {
+		font-size: 38px;
+		margin: 10px 0 45px;
+		line-height: 1.1em;
+	}
+
+	.countdown-section{
+		padding: 0.3em 0.7em;
+	}
+	
+	.countdown-section b {
+		font-size: 1em;
+	}
+
+	.countdown-section span {
+		font-size: 0.4em;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+ 
+	.countdown-section {
+		display: inline-block;
+		padding: 0.5em 0.7em;
+		border-right: 1px solid rgba(255,255,255,0.3);
+	}
+
+	.countdown-section b {
+		font-size: 1em;
+		display: block;
+	};
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	.countdown-section b {
+		font-size: 1.2em;
+		display: block;
+	}
+}
+
+

@@ -26,10 +26,10 @@ def some_view(request):
 urlpatterns = [
     url(r'^$', home_view, name='home'),
     url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
+    url(r'^staff/$', TemplateView.as_view(template_name='pages/staff.html'), name='staff'),
     url(r'^hi/$', MyView.as_view(), name='bullshit'),
     url(r'^submit/$', regformfunction, name='submit'),
     url(r'^.well-known/acme-challenge/9P-9e5iWbA7L2-xAxOjjNoJDhsyET6f0xG4_r26f_PQ$', some_view, name=''),
-    url(r'^somelocation/$', admin_view, name='admin-login'),
 
     # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, admin.site.urls),

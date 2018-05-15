@@ -4,11 +4,52 @@
 
 {% load instagram_client %}
 
+{% load cloudinary %}
+
 {% block content %}
 
-<section id="slider" class=="slider-element slider-parallax full-screen force-full-screen" >
+<link rel="stylesheet" href="{% static 'css/clock.css' %}" type="text/css" />
 
-        <!-- <div class="section dark nomargin noborder ohidden" style="padding: 120px 0;"> -->
+<section id="slider" class="slider-element force-full-screen full-screen">
+        <div class="force-full-screen full-screen dark" style="background-image: url('{% static "images/n bg.gif" %}');background-position: 50% 0; background-repeat: no-repeat; background-size: cover;">
+        <div class="container clearfix">
+        <div class="slider-caption slider-caption-center">
+            
+                <h2 data-animate="fadeInDown" style="text-transform: uppercase;">IFEMUN 2018</h2>
+        
+                <div data-animate="fadeInDown" id="clockdiv" class="center">
+                        <div>
+                            <span id="days" class="days"></span>
+                            <div class="smalltext">Days</div>
+                        </div>
+                        <div>
+                            <span id="hours" class="hours"></span>
+                            <div class="smalltext">Hours</div>
+                        </div>
+                        <div>
+                            <span id="minutes" class="minutes"></span>
+                            <div class="smalltext">Minutes</div>
+                        </div>
+                        <div class="d-none d-sm-inline-block">
+                            <span id="seconds" class="seconds"></span>
+                            <div class="smalltext">Seconds</div>
+                        </div>
+                    </div>
+
+        <h3 class="topmargin" data-animate="fadeInUp" data-delay="400" style="text-transform: none;"><span style="color: #1ABC9C;">Theme:</span> Achieving Human Development: Striving for Peace and Decent Life in a Sustainable World</h3>
+        <h4 data-animate="fadeInUp" data-delay="400"><span style="color: #1ABC9C;">Date:</span> June 20th - 23rd, 2018</h4>
+       
+        <div class="clearfix">
+                <a data-animate="fadeInUp" data-delay="600" href="{% url 'registration:reg-form' %}" class="button button-border button-light button-circle t400" >Register</a>
+        </div>
+        
+        </div>
+        </div>
+
+        </div>
+        </section>
+
+<!-- <section id="slider" class=="slider-element slider-parallax full-screen force-full-screen" >
         
         <div class="slider-parallax-inner">
         
@@ -34,8 +75,25 @@
                         </div>
 
                         <a href="{% url 'registration:reg-form' %}" class="button button-border button-light button-circle t400" >Register</a>
-
                         
+                        <div id="clockdiv" class="center">
+                                <div>
+                                    <span id="days" class="days"></span>
+                                    <div class="smalltext">Days</div>
+                                </div>
+                                <div>
+                                    <span id="hours" class="hours"></span>
+                                    <div class="smalltext">Hours</div>
+                                </div>
+                                <div>
+                                    <span id="minutes" class="minutes"></span>
+                                    <div class="smalltext">Minutes</div>
+                                </div>
+                                <div>
+                                    <span id="seconds" class="seconds"></span>
+                                    <div class="smalltext">Seconds</div>
+                                </div>
+                            </div>
                     </div>
                 </div>
 
@@ -44,7 +102,7 @@
 
         </div>
 
-</section>
+</section> -->
 
 
 
@@ -200,7 +258,7 @@
                 {% endif %}
             <div class="ipost clearfix">
             <div class="entry-image" style="padding: 10%; padding-bottom: 0%; padding-left: 0px;">
-                <img alt="100%x180" src="http://127.0.0.1:8000{{ post.picture }}" class="img-thumbnail">
+                <img alt="Post thumbnail" src='{% cloudinary_url post.picture.public_id %}' class="img-thumbnail">
             </div>
             <div class="entry-title">
             <h3><a href="{% url 'blog:post_detail' pk=post.id %}">{{ post.title }}</a></h3>
@@ -277,6 +335,19 @@
                 color: #000000;
             }
     </style>
+
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+
+<script type="text/javascript">
+    $("#clockdiv").countdown("2018/06/20", function(event) {
+        $("#days").text(event.strftime('%D'));
+        $("#hours").text(event.strftime('%H'));
+        $("#minutes").text(event.strftime('%M'));
+        $("#seconds").text(event.strftime('%S'));
+    });
+</script>
+
 {% endblock %}
 
 

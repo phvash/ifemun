@@ -55,3 +55,7 @@ django-phonenumber-field
 django-widget-tweaks
 django-csv-exports
 future
+
+djangorestframework
+# PyDrive
+cloudinary

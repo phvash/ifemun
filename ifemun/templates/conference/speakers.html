@@ -1,0 +1,71 @@
+{% extends "new_base.html" %}
+{% load static %}
+{% block title %}Ifemun | Speakers{% endblock %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/speakers.css' %}" type="text/css" />
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet"> 
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> 
+
+<div class="team">
+    <div class="container">
+                
+        <div class="row">
+            <div class="col-lg-12 col-lg-offset-3 text-center">  
+                <div class="head-text"><span class="ion-minus"></span>Our Guests<span class="ion-minus"></span></div>
+                <p> Meet our guests for the premier Ifemun conference </p><br>
+            </div> 
+        </div>
+    		    		
+    	<div class="row text-center">
+    			
+    		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+    				   
+    				   	<img class="img-rounded" alt="team-photo" src="{% static 'images/people/speakers/EldaDavid copy.jpg' %}" width="100%">
+    				   	
+    				   	<div class="team-member">
+                        
+    				   	<h4>Eldadavid Kehinde Samuel</h4>
+    				   	
+    				   	<p>Head of Operations, Nirmala Chellaram Centre for Entrepreneurship Skills</p>
+                        
+    				   	</div>
+    				   	
+    				   	<p class="social">
+    				   		<a href="#"><span class="fa fa-facebook-square"></span></a>
+    				   		<a href="#"><span class="fa fa-twitter-square"></span></a>
+    				   		<a href="#"><span class="fa fa-linkedin-square"></span></a>
+    				   		<a href="#"><span class="fa fa-google-plus-square"></span></a>
+    				   	</p>
+    						    					    				
+    		 </div> <!--col-lg-4 -->
+    				
+    		 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+    				   
+    				   	<img class="img-rounded" alt="team-photo" src="{% static 'images/people/speakers/Dr Bello.jpg' %}" width="100%">
+    				   	
+    				   	<div class="team-member">
+                        
+    				   	<h4>Dr. Oladiran Bello</h4>
+    				   	
+    				   	<p>Executive Director, Good Governance Africa</p>
+                        
+    				   	</div>
+    				   	
+    				   	<p class="social">
+    				   		<a href="#"><span class="fa fa-facebook-square"></span></a>
+    				   		<a href="#"><span class="fa fa-twitter-square"></span></a>
+    				   		<a href="#"><span class="fa fa-linkedin-square"></span></a>
+    				   		<a href="#"><span class="fa fa-google-plus-square"></span></a>
+    				   	</p>
+    						    					    				
+    		 </div> <!--col-lg-4 -->
+    				
+                   
+    	</div>  <!-- row text-center -->
+    			
+    </div>    
+</div>
+
+{% endblock %}
