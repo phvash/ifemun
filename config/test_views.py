@@ -30,7 +30,7 @@ class MyView(View):
 class RegistrationSubmit(TemplateView):
     def post(self, request, **kwargs):
         form = RegistrationForm(request.POST)
-        template_path = "conference/new_reg.html"
+        template_path = "registration/new_reg.html"
         if form.is_valid():
             delegate = form.save(commit=False)
             delegate.save()
@@ -45,7 +45,7 @@ class RegistrationSubmit(TemplateView):
 def regformfunction(request):
     if request.method == "POST":
         form = RegistrationForm(request.POST)
-        template_path = "conference/new_reg.html"
+        template_path = "registration/new_reg.html"
         if form.is_valid():
             delegate = form.save(commit=False)
             delegate.save()
