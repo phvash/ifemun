@@ -1,92 +1,131 @@
 .pix {
-    float: left;
-    margin-right: 20px;
-    margin-bottom: 20px;
-  }
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
 
 
 .blurred-content:before {
-  content: "";
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  
-  display: block;
-  background-image: url('/static/images/bg4.jpg');
-  /* background-image: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_527bf56961712_1.JPG');
-  width: 1200px;
-  height: 800px; */
-  
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
+content: "";
+position: fixed;
+left: 0;
+right: 0;
+z-index: -1;
+
+display: block;
+background-image: url('/static/images/bg4.jpg');
+/* background-image: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_527bf56961712_1.JPG');
+width: 1200px;
+height: 800px; */
+
+-webkit-filter: blur(5px);
+-moz-filter: blur(5px);
+-o-filter: blur(5px);
+-ms-filter: blur(5px);
+filter: blur(5px);
 }
 
 .blurred-content {
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 0;
-  margin-left: 20px;
-  margin-right: 20px;
+position: fixed;
+left: 0;
+right: 0;
+z-index: 0;
+margin-left: 20px;
+margin-right: 20px;
 }
 
 .not_content:before {
-  content: "";
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  
-  display: block;
-  background-image: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_527bf56961712_1.JPG');
-  width: 1200px;
-  height: 800px;
-  
-  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
+content: "";
+position: fixed;
+left: 0;
+right: 0;
+z-index: -1;
+
+display: block;
+background-image: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_527bf56961712_1.JPG');
+width: 1200px;
+height: 800px;
+
+-webkit-filter: blur(5px);
+-moz-filter: blur(5px);
+-o-filter: blur(5px);
+-ms-filter: blur(5px);
+filter: blur(5px);
 }
 
 .not_content {
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 0;
-  margin-left: 20px;
-  margin-right: 20px;
+position: fixed;
+left: 0;
+right: 0;
+z-index: 0;
+margin-left: 20px;
+margin-right: 20px;
 }
 
 #dark-footer{
-  position:relative;
-  background-color:#333;
-  border-top:5px solid rgba(0,0,0,.2);
-  color: #CCC
+position:relative;
+background-color:#333;
+border-top:5px solid rgba(0,0,0,.2);
+color: #CCC
 }
 
 
 .tint {
-  position: relative;
-  float: left;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  box-shadow: rgba(0,0,0,.2) 3px 5px 5px;
+position: relative;
+float: left;
+margin-right: 20px;
+margin-bottom: 20px;
+cursor: pointer;
+box-shadow: rgba(0,0,0,.2) 3px 5px 5px;
 }
 
 .tint:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
+content: "";
+display: block;
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background: rgba(0,255,255, 0.5);
+transition: all .3s linear;
+}
+
+.conference-heading{
+  color: #EEE;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.15);
+  position: relative;
+  max-width: 800px;
+  text-align: center;
+  margin: 0 auto;
   left: 0;
   right: 0;
-  background: rgba(0,255,255, 0.5);
-  transition: all .3s linear;
+  padding-left: 10%;
+  padding-right: 10%;
 }
+
+@media screen and (min-device-height : 320px){
+#main-heading{
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: 3px;
+}
+}
+
+@media screen and (min-device-height : 480px){
+#main-heading{
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: 3px;
+}
+}
+
+
+@media screen and (min-device-height : 600px)  and (min-device-width : 400px){
+#main-heading{
+  font-size: 78px;
+  line-height: 1;
+  letter-spacing: 3px;
+}
+}
+
