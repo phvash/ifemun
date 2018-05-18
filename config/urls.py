@@ -32,7 +32,7 @@ urlpatterns = [
     url(r'^.well-known/acme-challenge/9P-9e5iWbA7L2-xAxOjjNoJDhsyET6f0xG4_r26f_PQ$', some_view, name=''),
 
     # Django Admin, use {% url 'admin:index' %}
-    url(settings.ADMIN_URL, admin.site.urls),
+    url(r'^somelocation/', admin_view),
 
     # User management
     url(r'^users/', include('ifemun.users.urls', namespace='users')),
