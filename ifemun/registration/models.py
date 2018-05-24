@@ -68,7 +68,7 @@ class Applicant(models.Model):
         verbose_name='Date of Birth',
         help_text='Format: DD/MM/YYYY'
     )
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     home_address = models.CharField(max_length=100)
     phone_number = PhoneNumberField(help_text='Enter in international number format')
@@ -173,9 +173,9 @@ class Applicant(models.Model):
         help_text='Please enter your referral code? (If referred by a Campus Ambassador )',
         blank=True
     )
-    
-
-
+    amount_paid = models.CharField(max_length=10, blank=True)
+    payment_type = models.CharField(max_length=10, blank=True)
+    package = models.CharField(max_length=10, blank=True)
 
     def __str__(self):
         return self.first_name + " " + self.last_name

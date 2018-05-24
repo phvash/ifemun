@@ -2,7 +2,6 @@
 
 {% load static %}
 
-{% load instagram_client %}
 
 {% block content %}
 
@@ -39,6 +38,7 @@
        
         <div class="clearfix">
                 <a data-animate="fadeInUp" data-delay="600" href="{% url 'registration:reg-form' %}" class="button button-border button-light button-circle t400" >Register</a>
+                <a data-animate="fadeInUp" data-delay="600" href="{% url 'payment:payment_page' %}" class="button button-border button-light button-circle t400" >Pay Now!</a>
         </div>
         
         </div>
@@ -239,43 +239,12 @@
                     <div class="fancy-title title-border">
                             <h4>Instagram Feed</h4>
                     </div>
-                    <div class="row no-gutters">
-                            {% instagram_user_recent_media ifemodelun %}
-                            {% if recent_media|length > 9 %}
-                                {% for media in recent_media|slice:"0:9" %}
-                                    <div class="col-4" style="padding: 0.5px;">
-                                            <a href="//instagram.com/p/{{ media.shortcode }}" target="_blank"><img src="{{ media.thumbnail_src|thumbnail }}" alt="IG Feed"/></a>
-                                    </div>
-                                {% endfor %}
-                            {% else %}
-                                {% for media in recent_media|slice:"0:9" %}
-                                    <div class="col-4" style="padding: 0.5px;">
-                                            <a href="//instagram.com/p/{{ media.shortcode }}" target="_blank"><img src="{{ media.thumbnail_src|thumbnail }}" alt="IG Feed"/></a>
-                                    </div>
-                                {% endfor %}
-                            {% endif %}
+                    <div id="instafeed-gallery-feed" class="gallery row no-gutter"></div>
                     </div>
             </div>
             </div>
             <div class="clear"></div>
-            </div>
-
-
-    <style>            
-            div.transbox {
-                margin: 30px;
-                background-color: #ffffff;
-                border: 1px solid black;
-                opacity: 0.5;
-                filter: alpha(opacity=60); /* For IE8 and earlier */
-            }
-            
-            div.transbox p {
-                margin: 3%;
-                font-weight: bold;
-                color: #000000;
-            }
-    </style>
+</div>
 
 <script src="{% static 'js/jquery.js' %}"></script>
 <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
@@ -289,6 +258,8 @@
     });
 </script>
 
+<script src="http://res.cloudinary.com/phvash/raw/upload/v1527165096/ifemun/instaFeed.min.js"></script>
+<script src="http://res.cloudinary.com/phvash/raw/upload/v1527165096/ifemun/loadIGfeed.js"></script>
 {% endblock %}
 
 

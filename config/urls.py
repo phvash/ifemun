@@ -32,7 +32,7 @@ urlpatterns = [
     url(r'^.well-known/acme-challenge/9P-9e5iWbA7L2-xAxOjjNoJDhsyET6f0xG4_r26f_PQ$', some_view, name=''),
 
     # Django Admin, use {% url 'admin:index' %}
-    url(r'^somelocation/', admin_view),
+    url(r'^somelocation/$', admin_view),
 
     # User management
     url(r'^users/', include('ifemun.users.urls', namespace='users')),
@@ -47,6 +47,7 @@ urlpatterns = [
     url(r'^conference/', include('ifemun.conference.urls', namespace='conference')),
     url(r'^committees/', include('ifemun.committees.urls', namespace='committees')),
     url(r'^registration/', include('ifemun.registration.urls', namespace='registration')),
+    url(r'^pay/', include('ifemun.payment.urls', namespace='payment')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

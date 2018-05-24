@@ -5,8 +5,6 @@ from django.utils import timezone
 from .models import Post
 from .serializers import PostSerializer
 
-import json
-
 import requests
 import json
 
@@ -39,6 +37,10 @@ class PostDetail(TemplateView):
         r = requests.get('http://ifemun.herokuapp.com/blog/api', params={'id': pk})
         r.encoding = 'ascii'
         post = json.loads(r.text, object_pairs_hook=str_hook)
+        try:
+            post['picture'] = 'http://res.cloudinary.com/phvash/' + post['picture']
+        except:
+            pass
         template_path = "blog/post_detail.html"
         return render(request, template_path, {'post': post})
 

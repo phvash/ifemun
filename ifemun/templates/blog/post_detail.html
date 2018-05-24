@@ -1,7 +1,5 @@
 {% extends "new_base.html" %}
 
-{% load instagram_client %}
-
 {% load cloudinary %}
 
 {% block content %}
@@ -100,22 +98,7 @@
                                 <div class="fancy-title title-border">
                                         <h4>Instagram Feed</h4>
                                 </div>
-                            <div class="row no-gutters">
-                                    {% instagram_user_recent_media ifemodelun %}
-                                    {% if recent_media|length > 9 %}
-                                        {% for media in recent_media|slice:"0:9" %}
-                                            <div class="col-4" style="padding: 0.5px;">
-                                                    <a href="//instagram.com/p/{{ media.shortcode }}" target="_blank"><img src="{{ media.thumbnail_src|thumbnail }}" alt="IG Feed"/></a>
-                                            </div>
-                                        {% endfor %}
-                                    {% else %}
-                                        {% for media in recent_media|slice:"0:9" %}
-                                            <div class="col-4" style="padding: 0.5px;">
-                                                    <a href="//instagram.com/p/{{ media.shortcode }}" target="_blank"><img src="{{ media.thumbnail_src|thumbnail }}" alt="IG Feed"/></a>
-                                            </div>
-                                        {% endfor %}
-                                    {% endif %}
-                            </div>
+                                <div id="instafeed-gallery-feed" class="gallery row no-gutter"></div>
                         </div>
                 </div>
         <div class="widget clearfix">
@@ -139,5 +122,8 @@
         </div>
         </div>
 </section>
+
+<script src="http://res.cloudinary.com/phvash/raw/upload/v1527165096/ifemun/instaFeed.min.js"></script>
+<script src="http://res.cloudinary.com/phvash/raw/upload/v1527165096/ifemun/loadIGfeed.js"></script>
 
 {% endblock %}

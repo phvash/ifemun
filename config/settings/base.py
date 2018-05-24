@@ -71,6 +71,7 @@ LOCAL_APPS = [
     'ifemun.conference.apps.ConferenceConfig',
     'ifemun.committees.apps.CommitteesConfig',
     'ifemun.registration.apps.RegistrationConfig',
+    'ifemun.payment.apps.PaymentConfig',
     # Your stuff: custom apps go here
 ]
 

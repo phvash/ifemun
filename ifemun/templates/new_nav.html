@@ -31,7 +31,13 @@
                                     <li><a href="{% url 'about' %}"><div>Why IFEMUN</div></a></li>
                                 </ul>
                         </li>
-                        <li><a href="{% url 'registration:reg-form' %}"><div>Registration</div></a></li>
+                        <li><a><div>Registration</div></a>
+                            <ul>
+                                <li><a href="{% url 'registration:reg-form' %}"><div>Register</div></a></li>
+                                <li><a href="{% url 'payment:payment_page' %}"><div>Pay</div></a></li>
+                            </ul>
+                            
+                        </li>
                         <li>
                             <a><div>Conference</div></a>
                             <ul>
